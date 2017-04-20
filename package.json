@@ -1,0 +1,26 @@
+{
+  "name": "inventory_management_be",
+  "version": "1.0.0",
+  "description": "This is the backend functionality of inventory management software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedapudibhargav/BEinventoryManagement.git"
+  },
+  "author": "Bhargava Chary Peddapudi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedapudibhargav/BEinventoryManagement/issues"
+  },
+  "homepage": "https://github.com/pedapudibhargav/BEinventoryManagement#readme",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose": "^4.9.5"
+  }
+}
