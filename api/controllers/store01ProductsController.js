@@ -2,10 +2,10 @@
 
 
 var mongoose = require('mongoose'),
-  product = mongoose.model('Products');
+store01Product = mongoose.model('store01ProductsModal');
 
 exports.list_all_products = function(req, res) {
-  product.find({}, function(err, product) {
+store01Product.find({}, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -26,7 +26,7 @@ exports.create_a_product = function(req, res) {
 
 
 exports.read_a_product = function(req, res) {
-product.findOne({ 'name': req.params.productName }, function(err, product) {
+store01Product.findOne({ 'name': req.params.productName }, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -35,7 +35,7 @@ product.findOne({ 'name': req.params.productName }, function(err, product) {
 
 
 exports.update_a_product = function(req, res) {
-  product.findOneAndUpdate(req.params.productId, req.body, {new: true}, function(err, product) {
+store01Product.findOneAndUpdate(req.params.productId, req.body, {new: true}, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -46,11 +46,11 @@ exports.update_a_product = function(req, res) {
 exports.delete_a_product = function(req, res) {
 
 
-  product.remove({
+store01Product.remove({
     _id: req.params.productId
   }, function(err, product) {
     if (err)
       res.send(err);
-    res.json({ message: 'product successfully deleted' });
+    res.json({ message: 'store product successfully deleted' });
   });
 };

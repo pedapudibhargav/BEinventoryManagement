@@ -1,8 +1,9 @@
 var express = require('express'),
   app = express(),
-  port = process.env.PORT || 3000,
+  port = process.env.PORT || 3001,
   mongoose = require('mongoose'),
   Products = require('./api/models/productsListModel'),
+  Store01Products = require('./api/models/store01ProductsModal'),
   bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
