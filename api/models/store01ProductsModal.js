@@ -5,8 +5,7 @@ var Schema = mongoose.Schema;
 
 var Store01ProductSchema = new Schema({
   oPrice: {
-    type: Number,
-    Required: 'Kindly enter the name of the task'
+    type: Number
   },
   is_banned: {
     type: Boolean
@@ -51,7 +50,8 @@ var Store01ProductSchema = new Schema({
     type: String
   },
   name: {
-    type: String
+    type: String,
+    Required:"Enter the id it's required"
   },
   form: {
     type: String
@@ -60,8 +60,7 @@ var Store01ProductSchema = new Schema({
     type: String
   },
   id: {
-    type: Number,
-    Required:"Enter the id it's required"
+    type: Number
   },
   packSizeLabel: {
     type: String
@@ -77,4 +76,4 @@ var Store01ProductSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('store01ProductsModal', Store01ProductSchema);
+module.exports = mongoose.model('store01Products', Store01ProductSchema);

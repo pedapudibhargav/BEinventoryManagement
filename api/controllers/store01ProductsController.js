@@ -2,10 +2,10 @@
 
 
 var mongoose = require('mongoose'),
-store01Product = mongoose.model('store01ProductsModal');
+product = mongoose.model('store01Products');
 
 exports.list_all_products = function(req, res) {
-store01Product.find({}, function(err, product) {
+  product.find({}, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -17,6 +17,7 @@ store01Product.find({}, function(err, product) {
 
 exports.create_a_product = function(req, res) {
   var new_product = new product(req.body);
+  process.stdout.write("hello: "+req.body.name);
   new_product.save(function(err, product) {
     if (err)
       res.send(err);
@@ -26,7 +27,7 @@ exports.create_a_product = function(req, res) {
 
 
 exports.read_a_product = function(req, res) {
-store01Product.findOne({ 'name': req.params.productName }, function(err, product) {
+product.findOne({ 'name': req.params.productName }, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -35,7 +36,7 @@ store01Product.findOne({ 'name': req.params.productName }, function(err, product
 
 
 exports.update_a_product = function(req, res) {
-store01Product.findOneAndUpdate(req.params.productId, req.body, {new: true}, function(err, product) {
+  product.findOneAndUpdate(req.params.productId, req.body, {new: true}, function(err, product) {
     if (err)
       res.send(err);
     res.json(product);
@@ -44,13 +45,11 @@ store01Product.findOneAndUpdate(req.params.productId, req.body, {new: true}, fun
 
 
 exports.delete_a_product = function(req, res) {
-
-
-store01Product.remove({
+  product.remove({
     _id: req.params.productId
   }, function(err, product) {
     if (err)
       res.send(err);
-    res.json({ message: 'store product successfully deleted' });
+    res.json({ message: 'product successfully deleted' });
   });
 };
