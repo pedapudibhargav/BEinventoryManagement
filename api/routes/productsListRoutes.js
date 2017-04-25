@@ -22,4 +22,7 @@ module.exports = function(app) {
     .get(store01ProductsList.read_a_product)
     .put(store01ProductsList.update_a_product)
     .delete(store01ProductsList.delete_a_product);
+
+  app.route('/findproducts/:productName')
+    .get(productsList.product_auto_suggestion);
 };
