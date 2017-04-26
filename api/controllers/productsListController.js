@@ -36,7 +36,7 @@ product.findOne({ 'name': req.params.productName }, function(err, product) {
 exports.product_auto_suggestion = function(req, res) {
 
   process.stdout.write("Rquested String: "+req.params.productName);
-  var regexReq = "^.*acc";
+  var regexReq = "^.*"+req.params.productName;
   var regexObj = new RegExp(regexReq, 'i');
   product.find({
     name:{$regex : regexObj  }
