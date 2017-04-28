@@ -26,6 +26,9 @@ var Store01ProductSchema = new Schema({
   tags:{
     type: Array
   },
+  packForm:{
+    type: String
+  },
   inStockCount:{
     type: Number,
     default: 0

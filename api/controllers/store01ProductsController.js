@@ -13,12 +13,14 @@ exports.list_all_products = function(req, res) {
 };
 
 
-
-
 exports.create_a_product = function(req, res) {
+
+  process.stdout.write("Inside function");
   var new_product = new product(req.body);
   process.stdout.write("hello: "+req.body.name);
   new_product.save(function(err, product) {
+
+    process.stdout.write("Error msg:"+err);
     if (err)
       res.send(err);
     res.json(product);

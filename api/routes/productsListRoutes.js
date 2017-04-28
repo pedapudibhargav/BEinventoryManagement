@@ -13,6 +13,8 @@ module.exports = function(app) {
     .get(store01ProductsList.list_all_products)
     .post(store01ProductsList.create_a_product);
 
+  app.route('/store01/addProduct')
+    .all(store01ProductsList.create_a_product);
 
   app.route('/product/:productName')
     .get(productsList.read_a_product)
