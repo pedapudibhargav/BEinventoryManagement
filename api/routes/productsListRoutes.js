@@ -10,8 +10,7 @@ module.exports = function(app) {
     .post(productsList.create_a_product);
     // todoList Routes
   app.route('/store01/products')
-    .get(store01ProductsList.list_all_products)
-    .post(store01ProductsList.create_a_product);
+    .get(store01ProductsList.list_all_products);
 
   app.route('/store01/addProduct')
     .all(store01ProductsList.create_a_product);

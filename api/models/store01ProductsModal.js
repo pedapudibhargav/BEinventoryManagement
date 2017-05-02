@@ -11,6 +11,9 @@ var Store01ProductSchema = new Schema({
   manufacturer: {
     type: String
   },
+  minStockValue:{
+    type:Number
+  },
   drug_form: {
     type: String
   },
@@ -30,8 +33,7 @@ var Store01ProductSchema = new Schema({
     type: String
   },
   inStockCount:{
-    type: Number,
-    default: 0
+    type: Number
   }
 });
 
