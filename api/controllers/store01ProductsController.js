@@ -48,11 +48,19 @@ exports.create_a_product = function(req, res) {
 
 
 exports.read_a_product = function(req, res) {
-product.findOne({ 'name': req.params.productName }, function(err, product) {
-    if (err)
-      res.send(err);
-    res.json(product);
-  });
+  process.stdout.write("Rquested String: "+req.params.productName);
+  var regexReq = "^.*"+req.params.productName;
+  var regexObj = new RegExp(regexReq, 'i');
+  product.find({
+    name:{$regex : regexObj  }
+  }
+  , function(err, product) {
+      if (err)
+        res.send(err);
+      res.json(product);
+    });
+
+
 };
 
 

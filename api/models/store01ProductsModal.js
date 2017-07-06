@@ -33,7 +33,8 @@ var Store01ProductSchema = new Schema({
     type: String
   },
   inStockCount:{
-    type: Number
+    type: Number,
+    default: 0
   }
 });
 
